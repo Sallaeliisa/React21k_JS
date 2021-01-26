@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gasoline_calculator</title>
+</head>
+<body>
+    <h1>Gasoline price calculator</h1>
+    <p>
+        Make a program that asks the price of the gasoline and amount of money from the user. The program calculates how much gasoline the user gets with the money. The result is displayed to screen.
+    </p>
+    <form>
+    
+    <div>
+        <label for="price">Price</label>
+        <input type="text" id="price"/>
+    </div>
+    <div>
+        <label for="money">Money</label>
+        <input type="text" id="money"/>
+    </div>
+    </form>
+    <button onclick="calculate()">Calculate</button>
+    <p>You can buy <span id="answer"></span> liters of gasoline</p>
+    <p><span id="solution"></span></p>
+    <script src="script.js"></script>
+    
+</body>
+</html>
