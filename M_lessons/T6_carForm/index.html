@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Array</title>
+</head>
+<body>
+    <form id="inputData">
+        <h2>Add cars to database</h2>
+        <div>
+            <label for="licence">Licence plate</label>
+            <input type="text" id="licence">
+        </div>
+        <div>
+            <label for="maker">Car Maker</label>
+            <input type="text" id="maker">
+        </div>
+        <div>
+            <label for="model">Car Model</label>
+            <input type="text" id="model">
+        </div>
+        <div>
+            <label for="price">Price</label>
+            <input type="text" id="price">
+        </div>
+        <div>
+            <label for="color">Color</label>
+            <input type="text" id="color">
+        </div>
+        <button onclick="newCar()">Add car</button>
+        <h2>Search cars by licence plate</h2>
+        <div>
+            <label for="licenceSearch">Licence plate</label>
+            <input type="text" id="licenceSearch">
+        </div>
+        <button onclick="search()">Search car</button>
+    </form>
+    <p></p>
+    <script src="script.js"></script>
+
+</body>
+</html>
