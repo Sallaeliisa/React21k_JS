@@ -1,25 +1,47 @@
 body {
     background-color: black;
     color: white;
+    min-height: 100vh;
+   
 }
 
+#light-bulbs {
+    top: 200px;
+    left: 500px;
+    height: 500px;
+    width: 500px;
+    position: relative;
+}
 
 .bulb {
+    position: absolute;
     height: 20px;
     width: 20px;
     background-color: green;
-    margin: 5px;
+    margin-top: 100px;
+    margin-left: 250px;
+    border-radius: 10px;
     display: inline-block;
-}
-
-.bulb.active {
-    background-color: yellow;
+    -webkit-transition: background-color 0.1s ease-out;
+    -moz-transition: background-color 0.1s ease-out;
+    -o-transition: background-color 0.1s ease-out;
+    transition: background-color 0.1s ease-out;
 }
 
 .bulb.chosen {
-    background-color: red;
+    background: red;
+}
+
+.bulb.active {
+    background-color: blue;
+}
+.bulb.result {
+    background-color: blue;
 }
 
 #stopBtn {
-    margin-top: 100px;
+    display: inline-block;
+    position: absolute;
+    margin-top: 120px;
+    margin-left: 740px;
 }
