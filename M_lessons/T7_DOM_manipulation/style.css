@@ -18,16 +18,30 @@ footer {
     padding: 2rem;
 }
 
+section,
+footer {
+    color: white;
+}
+
 .bg {
     background-color: cadetblue;
 }
 
+/* Header */
+
 header {
+    height: 100px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     position: fixed;
     top: 0;
+    background-color: white;
     width: 100%;
+}
+
+#mobileButton {
+    display: none;
 }
 
 nav ul {
@@ -39,21 +53,24 @@ nav ul li {
 }
 
 section {
+    scroll-margin-top: 5rem;
     min-height: 50vh;
 }
 
-#first {
+section:first-child {
     background-color: burlywood;
     margin-top: 100px;
 }
 
-#second {
+section:nth-child(2) {
     background-color: darkgrey;
 }
 
-#third {
+section:last-child {
     background-color: navajowhite;
 }
+
+/* Footer */
 
 footer {
     background-color: bisque;
@@ -74,8 +91,11 @@ footer {
 }
 
 @media (max-width: 576px) {
+
     #mobileButton {
         display: block;
+        background-color: transparent;
+        border: none;
     }
 
     nav ul {
@@ -83,13 +103,19 @@ footer {
     }
 
     nav.responsive ul {
+        display: block;
         background-color: gray;
         position: absolute;
         width: 100%;
         left: 0;
         top: 100px;
     }
-    nav ul li a {
+
+    nav.responsive ul li {
+        display: block;
+    }
+
+    nav.responsive ul li a {
         display: block;
         padding: 1rem 2rem;
     }
