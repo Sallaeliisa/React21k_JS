@@ -7,30 +7,10 @@ const daysFromToday = (event) => {
   let endDate = document.getElementById("endDate").valueAsDate;
   let startDate = document.getElementById("startDate").valueAsDate;
 
-  let today = new Date();
-  let date = new Date(today);
   let starting = new Date(startDate);
 
-  let daysToday = 0;
   let daysStart = 0;
-  let businessDaysToday = 0;
   let businessDaysStart = 0;
-
-  while (date < endDate) {
-    switch (date.getDay()) {
-      case 0:
-        daysToday += 1;
-        break;
-      case 6:
-        daysToday += 1;
-        break;
-      default:
-        daysToday += 1;
-        businessDaysToday += 1;
-    }
-
-    date.setDate(date.getDate() + 1);
-  }
 
   while (starting < endDate) {
     switch (starting.getDay()) {
@@ -70,16 +50,7 @@ let timer = function () {
   let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  document.getElementById("counter").innerHTML =
-    "Countdown from this moment: " +
-    days +
-    "d " +
-    hours +
-    "h " +
-    minutes +
-    "m " +
-    seconds +
-    "s ";
+  document.getElementById("counter").innerHTML = `Countdown from this moment: ${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`;
 
   if (distance < 0) {
     clearInterval(timer);
