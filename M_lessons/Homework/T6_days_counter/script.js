@@ -24,7 +24,6 @@ const daysFromToday = (event) => {
         daysStart += 1;
         businessDaysStart += 1;
     }
-
     starting.setDate(starting.getDate() + 1);
   }
 

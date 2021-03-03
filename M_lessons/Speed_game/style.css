@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(to left, #e5e77e, #6a9951);
+  font-family: "Open Sans", sans-serif;
+}
+
+.bg {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(10, 10, 10, 0.3);
+}
+
+header,
+#circles,
+p,
+#results {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+/* Add here a class for color overlay */
+
+/* body::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(10, 10, 10, 0.3);
+} */
+
+.circle {
+  display: inline-block;
+  background-color: white;
+  border-style: none;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  margin: 0 0.9rem 0 0.9rem;
+}
+
+
