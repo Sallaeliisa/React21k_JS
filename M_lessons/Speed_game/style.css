@@ -6,7 +6,8 @@
 
 body {
   background-image: linear-gradient(to left, #e5e77e, #6a9951);
-  font-family: "Open Sans", sans-serif;
+  font-family: "Dosis", sans-serif;
+  text-align: center;
 }
 
 .bg {
@@ -18,24 +19,26 @@ body {
 }
 
 header,
-#circles,
-p,
-#results {
+#circles {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 2rem;
 }
 
-/* Add here a class for color overlay */
+#score {
+  height: 24px;
+}
 
-/* body::before {
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(10, 10, 10, 0.3);
-} */
+h2 {
+  font-size: 24px;
+}
+
+.gamearea {
+  margin: 100px auto;
+  width: 80%;
+  text-align: center;
+}
 
 .circle {
   display: inline-block;
@@ -46,5 +49,71 @@ p,
   border-radius: 50%;
   margin: 0 0.9rem 0 0.9rem;
 }
+
+.circle.inactive {
+  background-color: #333;
+}
+
+.circle.active {
+  background-color: blue;
+}
+
+.circle:active {
+  box-shadow: inset 0 0 5px #333;
+}
+
+.startEndBtns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+button {
+  font-family: "Dosis", sans-serif;
+  height: 30px;
+  width: 90px;
+  font-size: 16px;
+  position: absolute
+}
+
+#result {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gameoverbox {
+  background-color: white;
+  padding: 45px 0 0 0;
+  width: 30%;
+  height: 15%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  position: relative;
+}
+
+.gameoverbox button {
+  background-color: transparent;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  outline: none;
+}
+
+#gameover {
+  font-size: 24px;
+  color: #333;
+}
+
 
 
