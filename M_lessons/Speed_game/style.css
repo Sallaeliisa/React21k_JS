@@ -19,14 +19,7 @@ body {
 }
 
 header h1 {
-  margin: 200px 0 40px 0;
-}
-
-#circles {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 3rem;
+  margin: 16vh 0 40px 0;
 }
 
 #score {
@@ -37,11 +30,12 @@ h2 {
   font-size: 24px;
 }
 
-/* .gamearea {
-  margin: 100px auto;
-  width: 80%;
-  text-align: center;
-} */
+#circles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem;
+}
 
 .circle {
   display: inline-block;
@@ -123,6 +117,10 @@ button {
   padding: 30px;
 }
 
+#bestScore {
+  margin-top: 4rem;
+  font-size: 22px;
+}
 
 
 

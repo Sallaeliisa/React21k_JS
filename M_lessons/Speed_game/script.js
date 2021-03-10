@@ -3,26 +3,28 @@ let scoredisplay = document.querySelector("#score");
 let overlay = document.getElementById("result");
 let gameover = document.getElementById("gameover");
 let feedback = document.getElementById("feedback");
+let bestScore = document.getElementById("bestScore");
 let endBtn = document.getElementById("end");
 let startBtn = document.getElementById("start");
+let againBtn = document.getElementById("again");
 let music = document.getElementById("music");
 let sound = document.getElementById("sound");
-let message;
-
 let close = document.getElementById("close");
-
+let message;
 let score = 0;
 let active = 0;
 let time = 1000;
 let missed = -1;
+let record = 0;
 
-// Make buttons unclickable and hide stop button
+// Make buttons unclickable and hide stop & play again buttons
 
 buttons[0].classList.toggle("inactive");
 buttons[1].classList.toggle("inactive");
 buttons[2].classList.toggle("inactive");
 buttons[3].classList.toggle("inactive");
 endBtn.style.visibility = "hidden";
+againBtn.style.visibility = "hidden";
 
 // Start game, make buttons clickable again, pick an active button
 
@@ -37,6 +39,7 @@ const startGame = () => {
   buttons[2].classList.remove("inactive");
   buttons[3].classList.remove("inactive");
   startBtn.style.visibility = "hidden";
+  againBtn.style.visibility = "hidden";
   endBtn.style.visibility = "visible";
 
   let nextActive = pickNew(active);
@@ -111,26 +114,41 @@ const endGame = () => {
   clearTimeout(timer);
   overlay.style.visibility = "visible";
 
-  if (score < 10) {
+  if (score < 5) {
     message = "You can do better. Try again?";
-  } else if (score < 20) {
+  } else if (score < 10) {
     message = "Keep practicing";
-  } else if (score < 30) {
+  } else if (score < 20) {
     message = "Not bad";
-  } else if (score < 40) {
+  } else if (score < 30) {
     message = "Well done!";
+  } else if (score < 40) {
+    message = "You really are fast!";
   } else {
     message = "Amazing!";
   }
 
+  if (score > record) {
+    record = score;
+  }
+
   gameover.textContent = `Your score is ${score}`;
   feedback.textContent = message;
+  bestScore.textContent = `Your best score is ${record}`;
 }
 
-// Reload game
+// Reload game without losing best score record
 
 const reloadGame = () => {
-  window.location.reload();
+  score = 0;
+  missed = -1;
+  time = 1000;
+  scoredisplay.textContent = `Your score is 0`;
+  overlay.style.visibility = "hidden";
+  console.log(score);
+  againBtn.style.visibility = "visible";
+  startBtn.style.visibility = "hidden";
+  endBtn.style.visibility = "hidden";
 };
 
 close.addEventListener("click", reloadGame);

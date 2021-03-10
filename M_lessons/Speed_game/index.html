@@ -1,45 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css?family=Dosis"
       rel="stylesheet"
     />
     <title>Speedgame</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>Speedgame</h1>
+      <h1>Speedgame</h1>
     </header>
     <main>
-        <audio src="music.mp3" type="audio/mpeg" id="music"></audio>
-        <audio src="mixkit-fairytale-game-over-1945.wav" type="audio/wav" id="sound"></audio>
-    <h2 id="score">Your score is 0
-</h2>
-    <section id="circles">
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-    </section>
-    <div class="startEndBtns">
-        <button type="button" id="start" onclick="startGame()">Start game</button>
-        <button type="button" id = "end" onclick="endGame()">Stop game</button>
-    </div>
-    <section id="result">
+      <audio src="music.mp3" type="audio/mpeg" id="music"></audio>
+      <audio
+        src="mixkit-fairytale-game-over-1945.wav"
+        type="audio/wav"
+        id="sound"
+      ></audio>
+      <h2 id="score">Your score is 0</h2>
+      <section id="circles">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </section>
+      <div class="startEndBtns">
+        <button type="button" id="start" onclick="startGame()">
+          Start game
+        </button>
+        <button type="button" id="end" onclick="endGame()">Stop game</button>
+        <button type="button" id="again" onclick="startGame()">
+          Play again
+        </button>
+      </div>
+      <section id="result">
         <div class="gameoverbox">
-            <p>Game over!</p>
-            <p id="gameover"></p>
-            <p id="feedback"></p>
-            <button type="button" id="close">Close</button>
-          </div>
-    </section>
-</main>
+          <p>Game over!</p>
+          <p id="gameover"></p>
+          <p id="feedback"></p>
+          <button type="button" id="close">Close</button>
+        </div>
+      </section>
+      <h3 id="bestScore"></h3>
+    </main>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
