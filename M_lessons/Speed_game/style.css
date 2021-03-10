@@ -18,12 +18,15 @@ body {
     background-color: rgba(10, 10, 10, 0.3);
 }
 
-header,
+header h1 {
+  margin: 200px 0 40px 0;
+}
+
 #circles {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
+    padding: 3rem;
 }
 
 #score {
@@ -34,11 +37,11 @@ h2 {
   font-size: 24px;
 }
 
-.gamearea {
+/* .gamearea {
   margin: 100px auto;
   width: 80%;
   text-align: center;
-}
+} */
 
 .circle {
   display: inline-block;
@@ -55,6 +58,11 @@ h2 {
 }
 
 .circle.active {
+  background-image: url("danny-wage-tuL-S5pylz0-unsplash.png");
+  background-repeat: no-repeat, repeat;
+  background-size: 100%;
+  border-style: solid;
+  border-color: #333;
   background-color: blue;
 }
 
@@ -93,9 +101,8 @@ button {
 
 .gameoverbox {
   background-color: white;
-  padding: 45px 0 0 0;
+  padding: 45px;
   width: 30%;
-  height: 15%;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
@@ -113,7 +120,10 @@ button {
 #gameover {
   font-size: 24px;
   color: #333;
+  padding: 30px;
 }
+
+
 
 
 
