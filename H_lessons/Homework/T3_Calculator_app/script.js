@@ -1,60 +1,87 @@
-let firstNumber = '';
-let secondNumber = '';
-let operation = '';
+let rightNumber = '';
+let leftNumber = '';
+let operator = '';
+let quality = "";
+const display = document.getElementById('input');
+display.innerText = "0";
+const clearBtn = document.querySelector('#clear');
 
-document.getElementById('result').addEventListener('click', performCalculation);
+let operatorBtns = document.querySelectorAll('.operators > *');
 
-document.querySelectorAll('.operators > div').forEach(button => {
+document.querySelectorAll('.numbers > *').forEach(button => {
     button.addEventListener('click', function(){
-        updateSelectedOperation();
-        updateDisplay();
-    })
-})
-
-document.querySelectorAll('.numbers > div').forEach(button => {
-    button.addEventListener('click', function(){
+        number = button.value;
         updateSelectedNumber();
         updateDisplay();
     });
 })
 
+operatorBtns.forEach(button => {
+    button.addEventListener('click', function(){
+        operator = button.value;
+        if (display.innerText == "0") {
+            display.innerText = "";
+        }
+        if (operator === "-" && rightNumber == '') {
+            quality = "negative";
+        }
+        updateNewNumber();
+        updateDisplay();
+    })
+})
+
+
 function updateDisplay() {
-    document.getElementById('input').innerText = `${firstNumber} ${operation} ${secondNumber}`;
+    if(leftNumber == "0"){
+    display.innerText = `${operator} ${rightNumber}`;
+} else {
+    display.innerText = `${leftNumber} ${operator} ${rightNumber}`;
+}
 }
 
 function updateSelectedNumber() {
-    if (this.innerText === '.' && firstNumber.indexOf('.') > -1){
-        return;
-    }
-
-    firstNumber += this.innerText;
+    // if (number === '.' && firstNumber.indexOf('.') > -1){
+    //     return;
+    // }
+    
+    rightNumber += number;
 }
 
 /**
  * update the variable operation with the user choice
  * @return {void}
  */
-function updateSelectedOperation(){
-    secondNumber = firstNumber;
-    firstNumber = '';
+function updateNewNumber(){
+console.log(quality);
+    if (quality == "negative") {
+        leftNumber -= rightNumber;
+    } else {
+    leftNumber += rightNumber;
+}
+rightNumber = '';
 
-    switch(this.innerText){
-        case '+':
-            operation = 'plus';
-            break;
-        case '-':
-            operation = 'minus';
-            break;
-        case '&times;':
-            operation = 'multiply';
-            break;
-        case '&divide;':
-            operation = 'divide';
-            break;   
-        default:
-            console.log('Oops?');
-            break;
-    }
+
+
+    
+    
+
+    // switch(operator){
+    //     case '+':
+    //         operation = '+';
+    //         break;
+    //     case '-':
+    //         operation = '-';
+    //         break;
+    //     case '*':
+    //         operation = '*';
+    //         break;
+    //     case '/':
+    //         operation = '/';
+    //         break;   
+    //     default:
+    //         console.log('Oops?');
+    //         break;
+    // }
 }
 
 /**
@@ -62,6 +89,20 @@ function updateSelectedOperation(){
  * @return {number} result of the calculation
  */
 function performCalculation(){
-    if (operation === 'plus') return firstNumber + secondNumber;
-    if (operation === 'minus') return firstNumber - secondNumber;
+    let answer;
+    if (operator === '+') answer = Number(leftNumber) + Number(rightNumber);
+    if (operator === '-') answer = Number(leftNumber) - Number(rightNumber);
+    if (operator === '*') answer = Number(leftNumber) * Number(rightNumber);
+    if (operator === '/') answer = Number(leftNumber) / Number(rightNumber);
+    display.innerText = answer;
 }
+
+const clear = () => {
+    leftNumber = '';
+    rightNumber = '';
+    operator = '';
+    display.innerText = 0;
+}
+
+document.getElementById('result').addEventListener('click', performCalculation);
+clearBtn.addEventListener('click', clear, updateDisplay);
