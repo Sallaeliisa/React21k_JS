@@ -1,0 +1,58 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: url("https://source.unsplash.com/FIKD9t5_5zQ/1600x900") center
+    center/cover no-repeat fixed;
+}
+
+header,
+.wrapper,
+.container,
+.inputBox,
+.submitBtn {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+header {
+    margin-top: 5vh;
+}
+
+form {
+    margin: 6.5vh 0 5vh 0;
+}
+
+#city {
+    padding: .4rem;
+    border-radius: 3px;
+    border-style: none;
+    font-size: 16px;
+    text-align: center;
+    box-shadow: 0 0 2px #333;
+    margin:30px;
+}
+
+.container {
+    padding: 1rem 3rem 2rem 3rem;
+    background-color: transparent;
+    box-shadow: 0 0 5px #333;
+    border-radius: 10px;
+}
+
+.container:hover{
+    box-shadow: 0 0 10px #333;
+}
+
+.temperature-value {
+font-size: 32px;
+margin: .5rem 0 .5rem 0;
+}
+
+.temperature-description {
+    margin-bottom: 1rem;
+}
+
+.location {
+    font-size: 16px;
+}
