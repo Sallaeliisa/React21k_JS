@@ -1,11 +1,10 @@
 let rightNumber = '';
 let leftNumber = '';
 let operator = '';
-let quality = "";
+let negativeOrPositive = "";
 const display = document.getElementById('input');
 display.innerText = "0";
 const clearBtn = document.querySelector('#clear');
-
 let operatorBtns = document.querySelectorAll('.operators > *');
 
 document.querySelectorAll('.numbers > *').forEach(button => {
@@ -23,16 +22,15 @@ operatorBtns.forEach(button => {
             display.innerText = "";
         }
         if (operator === "-" && rightNumber == '') {
-            quality = "negative";
+            negativeOrPositive = "negative";
         }
         updateNewNumber();
         updateDisplay();
     })
 })
 
-
 function updateDisplay() {
-    if(leftNumber == "0"){
+    if(leftNumber == ""){
     display.innerText = `${operator} ${rightNumber}`;
 } else {
     display.innerText = `${leftNumber} ${operator} ${rightNumber}`;
@@ -40,54 +38,22 @@ function updateDisplay() {
 }
 
 function updateSelectedNumber() {
-    // if (number === '.' && firstNumber.indexOf('.') > -1){
-    //     return;
-    // }
+    if (number === '.' && rightNumber.indexOf('.') > -1){
+        return;
+    }
     
     rightNumber += number;
 }
 
-/**
- * update the variable operation with the user choice
- * @return {void}
- */
 function updateNewNumber(){
-console.log(quality);
-    if (quality == "negative") {
+    if (negativeOrPositive == "negative") {
         leftNumber -= rightNumber;
     } else {
     leftNumber += rightNumber;
 }
-rightNumber = '';
-
-
-
-    
-    
-
-    // switch(operator){
-    //     case '+':
-    //         operation = '+';
-    //         break;
-    //     case '-':
-    //         operation = '-';
-    //         break;
-    //     case '*':
-    //         operation = '*';
-    //         break;
-    //     case '/':
-    //         operation = '/';
-    //         break;   
-    //     default:
-    //         console.log('Oops?');
-    //         break;
-    // }
+rightNumber = ''; 
 }
 
-/**
- * perform the actual calculation depending on user choice
- * @return {number} result of the calculation
- */
 function performCalculation(){
     let answer;
     if (operator === '+') answer = Number(leftNumber) + Number(rightNumber);
