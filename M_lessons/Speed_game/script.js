@@ -92,9 +92,9 @@ const startGame = () => {
     }
   };
 
-  // Game ends if player misses 5 in a row
+  // Game ends if player misses 3 in a row in the beginning, or 1 later
 
-  if (missed == 5) {
+  if (missed == 3) {
     endGame();
   } else if (score > 0 && missed > 0) {
     endGame();
