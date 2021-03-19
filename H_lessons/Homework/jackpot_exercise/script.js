@@ -60,9 +60,6 @@ while (i <= 4) {
     rounds += 1;
     roundsTotal += 1;
 
-    // console.log("Number of 1s: " + counter1);
-    // console.log("Number of 0s: " + counter0);
-
     if (counter1 == 5) {
       console.log(
         "Congratulations! You win the jackpot! It took " + rounds + " rounds.");
